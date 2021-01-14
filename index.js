@@ -2,9 +2,9 @@
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
+const generate = require("./utils/generateMarkdown");
+const writeAsync = util.promisify(fs.writeFile);
 
-
-// TODO: Create an array of questions for user input
 const questions = [
     {
         type:"input",
@@ -54,10 +54,17 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    inquirer.prompt(
+
+    )
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+
+}
 
 // Function call to initialize app
 init();
