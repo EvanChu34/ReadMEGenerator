@@ -2,8 +2,8 @@
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
-const generate = require("./utils/generateMarkdown");
-const writeAsync = util.promisify(fs.writeFile);
+const generate = require("./utils/generateMarkdown.js");
+
 
 const questions = [
     {
@@ -55,16 +55,28 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    inquirer.prompt(
-
-    )
+    fs.writeFile(fileName, data, err =>{
+        if (err){
+            return console.log(err);
+        }
+        console.log("Success!")
+    });
 }
+const writeAsync = util.promisify(writeToFile);
+
 
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
+    try{
+        const userInfo = inquirer.prompt(questions)
+        console.log("", userInfo);
+        
 
-
+    }
+    catch(error){
+        console.log(error)
+    }
 }
 
-// Function call to initialize app
+
 init();

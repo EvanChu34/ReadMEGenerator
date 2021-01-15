@@ -21,13 +21,13 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-
+  
   ## Table of Contents 
 
   ## Installation
 
   ## Usage
-git add ut
+
   ## License
   
   ## Contributions
