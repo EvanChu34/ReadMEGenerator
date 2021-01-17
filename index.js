@@ -9,7 +9,7 @@ const questions = [
     {
         type:"input",
         name: "title",
-        message: "What is the title of the project?", 
+        message: "What is the title of the project?",
     },
     {
         type:"input",
@@ -71,7 +71,10 @@ async function init() {
         const userInfo = inquirer.prompt(questions)
         console.log("", userInfo);
         
+        const markdown = generate(userInfo)
+        console.log(markdown);
 
+        await writeAsync('exampleREADME.md', markdown)
     }
     catch(error){
         console.log(error)
