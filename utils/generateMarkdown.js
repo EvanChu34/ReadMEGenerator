@@ -78,8 +78,7 @@ function generateMarkdown(userResponses, userInfo) {
 
   `
 
-  let devDraft = 
-
+  let devDraft =
   `
   ---
   ## Questions

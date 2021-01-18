@@ -2,6 +2,7 @@
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
+const api = require("./utils/api.js");
 const generate = require("./utils/generateMarkdown.js");
 
 
@@ -17,7 +18,7 @@ const questions = [
             return true;
         } 
     },
-       {
+    {
         type:"input",
         name: "repo",
         message: "What is the Repo name?",
@@ -28,7 +29,6 @@ const questions = [
             return true;
         } 
     },
-    
     {
         type:"input",
         name: "title",
@@ -76,7 +76,6 @@ const questions = [
         name: "questions",
         message: "Where can I get ask questions?", 
     },
-
     {
         type:"list",
         name: "license",
@@ -103,8 +102,8 @@ async function init() {
         const userResponses = inquirer.prompt(questions)
         console.log("", userResponses);
         
-        const userInfo = await ;
-
+        const userInfo = await api.getUserInfo(userResponses);
+        console.log("Github info: ", userInfo)
         const markdown = generate(userResponses)
         console.log(markdown);
 
