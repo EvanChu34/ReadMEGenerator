@@ -1,53 +1,92 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-
-}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-
-}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `
+function generateMarkdown(userInfo) {
+  
+  let tocDraft = `## Table of Contents`;
+  
+  if(userInfo.install !== ''){tocDraft += `
+  * [Installation](*installation)`};
+
+  if(userInfo.install !== ''){tocDraft += `
+  * [Usage](#usage)`};
+
+  if(userInfo.install !== ''){tocDraft += `
+  * [Contributions](#contributions)`};
+
+  if(userInfo.install !== ''){tocDraft += `
+  * [Test](#test)`};
   
 
+  let readmeDraft = 
   
-  # ${data.title}
+  `# ${userInfo.title}
 
 
   ## Description
+  *Here's whats going on*
+  ${userInfo.description} 
+  `
+
+  readmeDraft += tocDraft;
+
+  readmeDraft += `* [License](*license)`;
+
+  if (userInfo.install !== ''){
+    readmeDraft +=
+    `
+    ## Installation
+    *There are steps required to install this project:*
+    ${userInfo.install}
+    `
+  };
+
+
+
+
+  if (userInfo.use !== ''){
+    readmeDraft +=
+    `
+    ## Usage
+    💻*Here are some instructions*
+    ${userInfo.use}
+    `
+  };
   
+  if(userInfo.contrubute !== ''){ 
+    `
+    ## Contributions
+    *want to constribute here how!*
+    ${userInfo.contrubute}
+    `
+  };
 
-  ## Table of Contents 
+  if(userInfo.test !== ''){
+    readmeDraft +=
+    `
+    ## Test
 
-
-  ## Installation
-
-
-  ## Usage
-  💻
-
+    *Here are any tests for the application (if neccsary)*
+    ✏️
+    ${userInfo.test}
+    `
+  };
+    
+  readmeDraft +=
+  `
   ## License
   
+  ${userInfo.test}
 
-  ## Contributions
+  `
 
+  let devDraft = 
 
-  ## Test
-  ✏️
-
+  `
+  ---
   ## Questions
-
+  ![Developer Pic]($()
+  
+  ${userInfo.questions}
 
 `;
 }
