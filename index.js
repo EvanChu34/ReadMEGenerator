@@ -8,13 +8,48 @@ const generate = require("./utils/generateMarkdown.js");
 const questions = [
     {
         type:"input",
+        name: "username",
+        message: "Enter your GitHub username",
+        validate: function(answer){
+            if (answer.length <1){
+                return console.log("enter a valid GitHub username")
+            }
+            return true;
+        } 
+    },
+       {
+        type:"input",
+        name: "repo",
+        message: "What is the Repo name?",
+        validate: function(answer){
+            if (answer.length <1){
+                return console.log("enter a valid GitHub repo")
+            }
+            return true;
+        } 
+    },
+    
+    {
+        type:"input",
         name: "title",
         message: "What is the title of the project?",
+        validate: function(answer){
+            if (answer.length <1){
+                return console.log("enter title")
+            }
+            return true;
+        } 
     },
     {
         type:"input",
         name: "description",
-        message: "Please give a short description of the project", 
+        message: "Please give a short description of the project",
+        validate: function(answer){
+            if (answer.length <1){
+                return console.log("Please give a short description")
+            }
+            return true;
+        }  
     },
     {
         type:"input",
@@ -41,15 +76,12 @@ const questions = [
         name: "questions",
         message: "Where can I get ask questions?", 
     },
+
     {
-        type:"input",
-        name: "username",
-        message: "Enter your GitHub username", 
-    },
-    {
-        type:"input",
-        name: "email",
-        message: "Please enter your email: ", 
+        type:"list",
+        name: "license",
+        message: "Choose a license",
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
     },
 ];
 
@@ -68,10 +100,12 @@ const writeAsync = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
 async function init() {
     try{
-        const userInfo = inquirer.prompt(questions)
-        console.log("", userInfo);
+        const userResponses = inquirer.prompt(questions)
+        console.log("", userResponses);
         
-        const markdown = generate(userInfo)
+        const userInfo = await ;
+
+        const markdown = generate(userResponses)
         console.log(markdown);
 
         await writeAsync('exampleREADME.md', markdown)

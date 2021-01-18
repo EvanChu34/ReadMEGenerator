@@ -1,73 +1,72 @@
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(userInfo) {
+function generateMarkdown(userResponses, userInfo) {
   
   let tocDraft = `## Table of Contents`;
   
-  if(userInfo.install !== ''){tocDraft += `
+  if(userResponses.install !== ''){tocDraft += `
   * [Installation](*installation)`};
 
-  if(userInfo.install !== ''){tocDraft += `
+  if(userResponses.install !== ''){tocDraft += `
   * [Usage](#usage)`};
 
-  if(userInfo.install !== ''){tocDraft += `
+  if(userResponses.install !== ''){tocDraft += `
   * [Contributions](#contributions)`};
 
-  if(userInfo.install !== ''){tocDraft += `
+  if(userResponses.install !== ''){tocDraft += `
   * [Test](#test)`};
   
 
   let readmeDraft = 
   
-  `# ${userInfo.title}
-
+  `# ${userResponses.title}
 
   ## Description
   *Here's whats going on*
-  ${userInfo.description} 
+  ${userResponses.description} 
   `
 
   readmeDraft += tocDraft;
 
   readmeDraft += `* [License](*license)`;
 
-  if (userInfo.install !== ''){
+  if (userResponses.install !== ''){
     readmeDraft +=
     `
     ## Installation
     *There are steps required to install this project:*
-    ${userInfo.install}
+    ${userResponses.install}
     `
   };
 
 
 
 
-  if (userInfo.use !== ''){
+  if (userResponses.use !== ''){
     readmeDraft +=
     `
     ## Usage
     💻*Here are some instructions*
-    ${userInfo.use}
+    ${userResponses.use}
     `
   };
   
-  if(userInfo.contrubute !== ''){ 
+  if(userResponses.contrubute !== ''){ 
     `
     ## Contributions
     *want to constribute here how!*
-    ${userInfo.contrubute}
+    ${userResponses.contrubute}
     `
   };
 
-  if(userInfo.test !== ''){
+  if(userResponses.test !== ''){
     readmeDraft +=
     `
     ## Test
 
     *Here are any tests for the application (if neccsary)*
     ✏️
-    ${userInfo.test}
+    ${userResponses.test}
     `
   };
     
@@ -75,7 +74,7 @@ function generateMarkdown(userInfo) {
   `
   ## License
   
-  ${userInfo.test}
+  ${userResponses.test}
 
   `
 
@@ -86,7 +85,7 @@ function generateMarkdown(userInfo) {
   ## Questions
   ![Developer Pic]($()
   
-  ${userInfo.questions}
+  ${userResponses.questions}
 
 `;
 }
