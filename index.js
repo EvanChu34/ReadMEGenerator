@@ -104,7 +104,8 @@ async function init() {
         
         const userInfo = await api.getUserInfo(userResponses);
         console.log("Github info: ", userInfo)
-        const markdown = generate(userResponses)
+
+        const markdown = generate(userResponses, userInfo)
         console.log(markdown);
 
         await writeAsync('exampleREADME.md', markdown)
