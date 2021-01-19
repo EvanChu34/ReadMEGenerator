@@ -5,51 +5,26 @@ const inquirer = require("inquirer");
 const api = require("./utils/api.js");
 const generate = require("./utils/generateMarkdown.js");
 
-
 const questions = [
     {
         type:"input",
         name: "username",
         message: "Enter your GitHub username",
-        validate: function(answer){
-            if (answer.length <1){
-                return console.log("enter a valid GitHub username")
-            }
-            return true;
-        } 
     },
     {
         type:"input",
         name: "repo",
         message: "What is the Repo name?",
-        validate: function(answer){
-            if (answer.length <1){
-                return console.log("enter a valid GitHub repo")
-            }
-            return true;
-        } 
     },
     {
         type:"input",
         name: "title",
         message: "What is the title of the project?",
-        validate: function(answer){
-            if (answer.length <1){
-                return console.log("enter title")
-            }
-            return true;
-        } 
     },
     {
         type:"input",
         name: "description",
         message: "Please give a short description of the project",
-        validate: function(answer){
-            if (answer.length <1){
-                return console.log("Please give a short description")
-            }
-            return true;
-        }  
     },
     {
         type:"input",
@@ -74,13 +49,12 @@ const questions = [
     {
         type:"input",
         name: "questions",
-        message: "Where can I get ask questions?", 
+        message: "Where can I ask questions?", 
     },
     {
-        type:"list",
+        type:"input",
         name: "license",
         message: "Choose a license",
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
     },
 ];
 
@@ -99,8 +73,9 @@ const writeAsync = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
 async function init() {
     try{
-        const userResponses = inquirer.prompt(questions)
-        console.log("", userResponses);
+        const userResponses = await inquirer.prompt(questions)
+        console.log("Your Responses: ", userResponses);
+        console.log("Responses have been logged!")
         
         const userInfo = await api.getUserInfo(userResponses);
         console.log("Github info: ", userInfo)
@@ -113,7 +88,6 @@ async function init() {
     catch(error){
         console.log(error)
     }
-}
-
+};
 
 init();

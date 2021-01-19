@@ -17,18 +17,20 @@ function generateMarkdown(userResponses, userInfo) {
   * [Test](#test)`};
   
 
-  let readmeDraft = 
   
+  let readmeDraft = 
   `# ${userResponses.title}
 
   ## Description
+
   *Here's whats going on*
   ${userResponses.description} 
   `
 
   readmeDraft += tocDraft;
 
-  readmeDraft += `* [License](*license)`;
+  readmeDraft += `
+  * [License](*license)`;
 
   if (userResponses.install !== ''){
     readmeDraft +=
@@ -39,54 +41,55 @@ function generateMarkdown(userResponses, userInfo) {
     `
   };
 
-
-
-
   if (userResponses.use !== ''){
     readmeDraft +=
     `
     ## Usage
     💻*Here are some instructions*
-    ${userResponses.use}
-    `
+    ${userResponses.use}`
   };
   
-  if(userResponses.contrubute !== ''){ 
+  if (userResponses.contrubute !== ''){ 
     `
     ## Contributions
-    *want to constribute here how!*
-    ${userResponses.contrubute}
-    `
+    *Want to constribute? Here's how!*
+    ${userResponses.contrubute}`
   };
 
-  if(userResponses.test !== ''){
+  if (userResponses.test !== ''){
     readmeDraft +=
     `
     ## Test
-
     *Here are any tests for the application (if neccsary)*
-    ✏️
-    ${userResponses.test}
-    `
+    ${userResponses.test}`
   };
     
   readmeDraft +=
   `
   ## License
-  
-  ${userResponses.test}
-
-  `
+  ${userResponses.license}
+  `;
 
   let devDraft =
   `
   ---
   ## Questions
-  ![Developer Pic]($()
-  
-  ${userResponses.questions}
+  ![Developer Pic](${userInfo.avatar_url})
+  For Question please contact me at:
+  GitHub: [@${userInfo.login}](${userInfo.url})
+  `;
 
-`;
+  if (userInfo.email !== null){
+    readmeDraft +=
+    `
+    Email: ${userInfo.email}
+    `
+  };
+
+  readmeDraft +=devDraft;
+
+  return readmeDraft;
+
 }
 
 module.exports = generateMarkdown;

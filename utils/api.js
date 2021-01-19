@@ -1,6 +1,7 @@
 const axios = require('axios');
+
 const api = {
-    async getUser(userResponses){
+    async getUserInfo(userResponses){
         try { let response = await axios 
             .get(`https://api.github.com/users/${userResponses.username}`)
             return response.data;
