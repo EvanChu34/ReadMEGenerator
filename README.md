@@ -13,11 +13,12 @@
     
   ## Installation
     *There are steps required to install this project:*
+
     If you run node index.js, the user will be given prompts and will have to answer the questions.
     
   ## Usage
-    💻*Here are some instructions*
-    ![Demo of ReadDME.md generator](EvanChuReadMe-Generator-Example.gif)
+    *Here are some instructions*
+
     If you run node index.js, the user will be given prompts and will have to answer the questions.
 
   ## Contributions
@@ -34,6 +35,5 @@
   ---
   ## Questions
   ![Developer Pic](https://avatars0.githubusercontent.com/u/73203839?v=4)
-  For Question please contact me at:
-  GitHub: [@EvanChu34](https://api.github.com/users/EvanChu34)
+  For Question please contact me at: GitHub: [@EvanChu34](https://api.github.com/users/EvanChu34)
   
