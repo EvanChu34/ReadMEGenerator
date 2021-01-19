@@ -10,18 +10,20 @@
   * [Contributions](#contributions)
   * [Test](#test)
   * [License](*license)
-    ## Installation
-    *There are steps required to install this project:*
-    If you run node index.js, the user will be given prompts and will have to answer the questions.
+  
+  ## Installation
+  *There are steps required to install this project:*
+  If you run node index.js, the user will be given prompts and will have to answer the questions.
     
-    ## Usage
-    💻*Here are some instructions*
-    ![Demoemo of ReadDME.md generator](EvanChuReadMe-Generator-Example.gif)
-    If you run node index.js, the user will be given prompts and will have to answer the questions.
+  ## Usage
+  💻*Here are some instructions*
+  ![Demo of ReadDME.md generator](EvanChuReadMe-Generator-Example.gif)
+  If you run node index.js, the user will be given prompts and will have to answer the questions.
 
-    ## Test
-    *Here are any tests for the application (if neccsary)*
-    Right now, there is not.
+  ## Test
+  *Here are any tests for the application (if neccsary)*
+  Right now, there is not.
+  
   ## License
   MIT License
   

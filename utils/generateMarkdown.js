@@ -49,11 +49,11 @@ function generateMarkdown(userResponses, userInfo) {
     ${userResponses.use}`
   };
   
-  if (userResponses.contrubute !== ''){ 
+  if (userResponses.contribute !== ''){ 
     `
     ## Contributions
     *Want to constribute? Here's how!*
-    ${userResponses.contrubute}`
+    ${userResponses.contribute}`
   };
 
   if (userResponses.test !== ''){
