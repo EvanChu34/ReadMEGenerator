@@ -23,7 +23,7 @@
 
   ## Contributions
     *Want to contribute? Here's how!*
-
+    
     Just shoot me an email!
 
   ## Test
@@ -36,7 +36,7 @@
   
   ---
   ## Questions
-    ![Developer Pic](https://avatars0.githubusercontent.com/u/73203839?v=4)
-    
-    For Question please contact me at: GitHub: [@EvanChu34](https://api.github.com/users/EvanChu34)
+  ![Developer Pic](https://avatars0.githubusercontent.com/u/73203839?v=4)
+  
+  For Question please contact me at: GitHub: [@EvanChu34](https://api.github.com/users/EvanChu34)
   
