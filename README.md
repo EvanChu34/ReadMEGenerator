@@ -16,7 +16,9 @@
     
     ## Usage
     💻*Here are some instructions*
+    (EvanChuReadMe-Generator-Example.gif)
     If you run node index.js, the user will be given prompts and will have to answer the questions.
+
     ## Test
     *Here are any tests for the application (if neccsary)*
     Right now, there is not.
