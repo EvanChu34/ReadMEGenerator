@@ -52,7 +52,7 @@ function generateMarkdown(userResponses, userInfo) {
   if (userResponses.contribute !== ''){ 
     `
     ## Contributions
-    *Want to constribute? Here's how!*
+    *Want to contribute? Here's how!*
     ${userResponses.contribute}`
   };
 
